@@ -110,4 +110,26 @@ footer {
         height: 150px;
         font-size: 2.5em;
     }
+    .home-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
+
+.home-button button {
+    padding: 8px 12px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.home-button button:hover {
+    background-color: #FFC300;
+}
+
 }
