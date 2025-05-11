@@ -1,15 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
     background-color: #f5f5f5;
     margin: 0;
     padding: 20px;
     text-align: center;
 }
 
-h1, h2, h3, p, footer {
+/* 기본 텍스트 크기 조정 */
+h1 {
+    font-size: 3em; /* 제목 크게 */
+    margin: 0.2em 0;
+}
+
+h2, h3 {
+    font-size: 2.2em; /* 부제목도 크게 */
+}
+
+p, footer {
+    font-size: 1.5em; /* 본문도 큼직하게 */
     color: #333;
-    font-size: 1.5em; /* 모바일에 맞춰 글씨 크게 */
 }
 
 a {
@@ -21,46 +31,40 @@ a:hover {
     text-decoration: underline;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: column; /* 버튼을 세로로 나란히 */
-    gap: 10px;
-    align-items: center;
-}
-
+/* 버튼 스타일 수정 */
 button {
     padding: 15px 30px;
-    margin: 5px;
+    margin: 10px 0;
     background-color: #FFD700;
     color: black;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1.2em;
-    width: 80%; /* 모바일 화면 폭에 맞춤 */
-    max-width: 300px;
+    font-size: 1.8em; /* 버튼 글씨 크게 */
+    width: 90%; /* 모바일 화면에 맞춤 */
+    max-width: 350px;
 }
 
 button:hover {
     background-color: #FFC300;
 }
 
+/* 카드 스타일 수정 */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개씩 배치 */
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개 */
+    gap: 20px;
     justify-items: center;
 }
 
 .card-button {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #FFD700;
     color: black;
     border: none;
     border-radius: 10px;
-    margin: 5px;
-    font-size: 1.5em;
+    font-size: 2em; /* 카드 버튼 글씨 크게 */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -72,24 +76,38 @@ button:hover {
     background-color: #FFC300;
 }
 
+/* 푸터 스타일 수정 */
 footer {
     margin-top: 20px;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #777;
 }
 
+/* 모바일 최적화 */
 @media (max-width: 600px) {
-    h1, h2, h3, p, footer {
-        font-size: 1.8em;
+    body {
+        padding: 15px;
     }
 
-    .card-button {
-        width: 120px;
-        height: 120px;
+    h1 {
+        font-size: 4em;
+    }
+
+    h2, h3 {
+        font-size: 3em;
+    }
+
+    p, footer {
         font-size: 2em;
     }
 
     button {
-        font-size: 1.5em;
+        font-size: 2em;
+    }
+
+    .card-button {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5em;
     }
 }
