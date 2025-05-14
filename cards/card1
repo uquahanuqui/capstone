@@ -34,13 +34,13 @@
 </head>
 <body>
     <h1>ㄱ</h1>
-    <button onclick="playSound()">▶️ 재생</button>
+    <button onclick="playSound()">▶️</button>
 
     <script>
-        function playSound() {
+        <!--#function playSound() {
             const audio = new Audio('assets/sounds/ㄱ.mp3');
             audio.play();
-        }
+        }-->
     </script>
 </body>
 </html>
