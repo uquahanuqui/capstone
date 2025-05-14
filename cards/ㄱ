@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ㄱ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 15em; /* 엄청 큰 글씨 */
+            margin: 0.5em 0;
+        }
+
+        button {
+            font-size: 5em; /* 큰 버튼 */
+            padding: 20px 40px;
+            margin-top: 20px;
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FFC300;
+        }
+    </style>
+</head>
+<body>
+    <h1>ㄱ</h1>
+    <button onclick="playSound()">▶️ 재생</button>
+
+    <script>
+        function playSound() {
+            const audio = new Audio('assets/sounds/ㄱ.mp3');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
