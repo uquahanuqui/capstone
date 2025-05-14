@@ -9,40 +9,45 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 화면 전체 높이 사용 */
+            flex-direction: column;
         }
 
         h1 {
-            font-size: 15em;
-            margin: 0.5em 0;
+            font-size: 20em; /* 글씨 크기 크게 */
+            margin: 0.2em 0;
         }
 
         /* 동그란 큰 버튼 스타일 */
         .play-button {
-            width: 200px;
-            height: 200px;
+            width: 400px;   /* 버튼 크기 2배 이상 */
+            height: 400px;  /* 버튼 크기 2배 이상 */
             background-color: #FFD700;
             color: black;
             border: none;
             border-radius: 50%; /* 동그란 모양 */
-            font-size: 5em;
+            font-size: 6em;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: transform 0.2s ease;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* 버튼 클릭 시 살짝 커지게 */
         .play-button:hover {
             background-color: #FFC300;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* 버튼 클릭 효과 */
         .play-button:active {
             transform: scale(0.95);
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
