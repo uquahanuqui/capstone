@@ -37,10 +37,13 @@
     <button onclick="playSound()">▶️</button>
 
     <script>
-        <!--#function playSound() {
-            const audio = new Audio('assets/sounds/ㄱ.mp3');
-            audio.play();
-        }-->
+        // 음성 재생 함수
+        function playSound() {
+            // 오디오 파일 경로 설정 (현재 음성 파일 없음)
+            // const audio = new Audio('/capstone/assets/sounds/g.mp3');
+            // audio.play();
+            alert("음성 파일이 아직 없습니다!");
+        }
     </script>
 </body>
 </html>
