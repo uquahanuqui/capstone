@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> ㄱ </title>
+    <title>ㄱ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,37 +12,49 @@
         }
 
         h1 {
-            font-size: 15em; /* 엄청 큰 글씨 */
+            font-size: 15em;
             margin: 0.5em 0;
         }
 
-        button {
-            font-size: 5em; /* 큰 버튼 */
-            padding: 20px 40px;
-            margin-top: 20px;
+        /* 동그란 큰 버튼 스타일 */
+        .play-button {
+            width: 200px;
+            height: 200px;
             background-color: #FFD700;
             color: black;
             border: none;
-            border-radius: 15px;
+            border-radius: 50%; /* 동그란 모양 */
+            font-size: 5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
+            transition: transform 0.2s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        button:hover {
+        /* 버튼 클릭 시 살짝 커지게 */
+        .play-button:hover {
             background-color: #FFC300;
+            transform: scale(1.1);
+        }
+
+        /* 버튼 클릭 효과 */
+        .play-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <h1>ㄱ</h1>
-    <button onclick="playSound()">▶️</button>
+    <button class="play-button" onclick="playSound()">▶️</button>
 
     <script>
-        // 음성 재생 함수
         function playSound() {
-            // 오디오 파일 경로 설정 (현재 음성 파일 없음)
+            alert("음성 파일이 아직 없습니다!");
             // const audio = new Audio('/capstone/assets/sounds/g.mp3');
             // audio.play();
-            alert("음성 파일이 아직 없습니다!"); 
         }
     </script>
 </body>
