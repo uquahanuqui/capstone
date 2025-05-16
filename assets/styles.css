@@ -1,104 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 2.4;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-}
-
 /* 홈 버튼 스타일 수정 */
 .home-icon {
     position: fixed;
     top: 10px;
     left: 10px;
-    font-size: 3em; /* 홈 버튼 폰트 크기 키움 */
+    font-size: 4em; /* 홈 버튼 크기 */
     cursor: pointer;
     z-index: 9999; /* 최상위 레이어로 설정 */
-}
-
-/* 기본 텍스트 크기 조정 */
-h1 {
-    font-size: 10em; /* 제목 더 크게 */
-    margin: 0.6em 0;
-}
-
-h2, h3 {
-    font-size: 7em; /* 부제목도 더 크게 */
-}
-
-p, footer {
-    font-size: 5em; /* 본문도 더 크게 */
-    color: #333;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-    font-size: 5em; /* 링크도 더 크게 */
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* 버튼 스타일 수정 */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* 버튼 간격 더 넓게 */
-    align-items: center;
-}
-
-button {
-    padding: 30px 80px; /* 버튼 크기 더 크게 */
-    margin: 20px 0;
-    background-color: #FFD700;
-    color: black;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 4.5em; /* 버튼 글씨 더 크게 */
-    width: 95%; /* 가로로 더 길게 */
-    max-width: 700px; /* 최대 길이 더 크게 */
-}
-
-button:hover {
-    background-color: #FFC300;
-}
-
-/* 카드 스타일 수정 */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-items: center;
-}
-
-.card-button {
-    width: 360px;
-    height: 360px;
-    background-color: #FFD700;
-    color: black;
-    border: none;
-    border-radius: 10px;
-    font-size: 6em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.card-button:hover {
-    background-color: #FFC300;
-}
-
-/* 푸터 스타일 수정 */
-footer {
-    margin-top: 60px;
-    font-size: 4em; /* 푸터도 조금 더 크게 */
-    color: #777;
 }
 
 /* 모바일 최적화 */
@@ -132,7 +39,7 @@ footer {
     }
 
     .home-icon {
-        font-size: 4em; /* 홈 아이콘도 크게 */
+        font-size: 4em; /* 홈 버튼 크기 동일하게 */
         top: 20px;
         left: 20px;
     }
