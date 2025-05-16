@@ -9,6 +9,25 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 50px;
+        }
+
+        h1 {
+            font-size: 30vw; /* 뷰포트 너비를 기준으로 설정 */
+            margin: 0.2em 0;
+        }
+
+        /* 홈 버튼 스타일 */
+        .home-icon {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 4em;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        /* 중앙 정렬을 위해 별도 설정 */
+        .content {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,16 +35,12 @@
             flex-direction: column;
         }
 
-        h1 {
-            font-size: 40em;
-            margin: 0.2em 0;
-        }
-
-
         /* 동그란 큰 버튼 스타일 */
         .play-button {
-            width: 400px;
-            height: 400px;
+            width: 30vw;   /* 상대 크기로 설정 */
+            height: 30vw;
+            max-width: 400px;
+            max-height: 400px;
             background-color: #FFD700;
             color: black;
             border: none;
@@ -54,8 +69,11 @@
     <!-- 홈 버튼 -->
     <div class="home-icon" onclick="location.href='/capstone/index.html'">&nbsp;&nbsp;🏠</div>
     
-    <h1>ㄱ</h1>
-    <button class="play-button" onclick="playSound()">▶️</button>
+    <!-- 중앙 정렬을 위한 컨테이너 -->
+    <div class="content">
+        <h1>ㄱ</h1>
+        <button class="play-button" onclick="playSound()">▶️</button>
+    </div>
 
     <script>
         function playSound() {
