@@ -9,11 +9,12 @@ body {
 
 /* 홈 버튼 스타일 수정 */
 .home-icon {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
     font-size: 3em; /* 홈 버튼 폰트 크기 키움 */
     cursor: pointer;
+    z-index: 9999; /* 최상위 레이어로 설정 */
 }
 
 /* 기본 텍스트 크기 조정 */
