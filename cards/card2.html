@@ -8,48 +8,46 @@
             text-align: center;
             background-color: #f5f5f5;
             margin: 0;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* 화면 전체 높이 사용 */
-            flex-direction: column;
+            padding: 20px;
         }
 
-        h1 {
-            font-size: 40em; /* 글씨 크기 크게 */
+        h2 {
+            font-size: 60vw; /* 글씨 크기 조정 */
             margin: 0.2em 0;
+        }
+
+        /* 홈 버튼 스타일 */
+        .home-icon {
+            position: fixed;
+            top: 30px;
+            left: 20px;
+            font-size: 3em;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        /* 중앙 정렬을 위해 별도 설정 */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 가운데 정렬 */
+            flex-direction: column;
+            height: 80vh; /* 화면의 80% 높이 사용 */
+            margin-top: 20px;
         }
 
         /* 동그란 큰 버튼 스타일 */
         .play-button {
-            width: 400px;   /* 버튼 크기 2배 이상 */
-            height: 400px;  /* 버튼 크기 2배 이상 */
-            background-color: #FFD700;
-            color: black;
-            border: none;
-            border-radius: 50%; /* 동그란 모양 */
-            font-size: 6em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* 버튼 클릭 시 살짝 커지게 */
-        .play-button:hover {
-            background-color: #FFC300;
-            transform: scale(1.05);
-       ㄴ</h1>
-    <button class="play-button" onclick="playSound()">▶️</button>
+            width: 40vw;   
+            height: 40vw;
+            max-width: 400px;
+            max-height: 400pxㄴ</h2>
+        <button class="play-button" onclick="playSound()">▶️</button>
+    </div>
 
     <script>
         function playSound() {
             alert("음성 파일이 아직 없습니다!");
-            // const audio = new Audio('/capstone/assets/sounds/g.mp3');
-            // audio.play();
         }
     </script>
 </body>
