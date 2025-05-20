@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ㅛ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 60vw; /* 글씨 크기 조정 */
+            margin: 0.2em 0;
+        }
+
+        /* 홈 버튼 스타일 */
+        .home-icon {
+            position: fixed;
+            top: 30px;
+            left: 20px;
+            font-size: 3em;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        /* 중앙 정렬을 위해 별도 설정 */
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* 가운데 정렬 */
+            flex-direction: column;
+            height: 80vh; /* 화면의 80% 높이 사용 */
+            margin-top: 20px;
+        }
+
+        /* 동그란 큰 버튼 스타일 */
+        .play-button {
+            width: 40vw;   
+            height: 40vw;
+            max-width: 400px;
+            max-height: 400px;
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            font-size: 6em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .play-button:hover {
+            background-color: #FFC300;
+            transform: scale(1.05);
+        }
+
+        .play-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 70vw; /* 모바일에서는 더 크게 */
+            }
+
+            .play-button {
+                width: 50vw;
+                height: 50vw;
+                font-size: 8em;
+            }
+
+            .home-icon {
+                font-size: 4em;
+                top: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 홈 버튼 -->
+    <div class="home-icon" onclick="location.href='/capstone/cards.html'">&nbsp;&nbsp;이전</div>
+    
+    <!-- 중앙 정렬을 위한 컨테이너 -->
+    <div class="content">
+        <h2>ㅛ</h2>
+        <button class="play-button" onclick="playSound()">▶️</button>
+    </div>
+
+    <script>
+        function playSound() {
+            alert("음성 파일이 아직 없습니다!");
+        }
+    </script>
+</body>
+</html>
