@@ -3,6 +3,35 @@
 <head>
     <title>학습 가이드</title>
     <link rel="stylesheet" href="assets/styles.css">
+
+    <style>
+    .play-button {
+        width: 80vw;
+        max-width: 600px;
+        height: 150px;
+        font-size: 4em;
+        background-color: #FFD700;
+        color: black;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+    }
+
+    .play-button:hover {
+        background-color: #FFC300;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+        .play-button {
+            width: 90vw;
+            height: 140px;
+            font-size: 5em;
+        }
+    }
+</style>
 </head>
 
 <body>
