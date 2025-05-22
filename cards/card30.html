@@ -12,8 +12,8 @@
         }
 
         h2 {
-            font-size: 60vw; /* 글씨 크기 조정 */
-            margin: 0.2em 0;
+            font-size: 60vw;
+            margin: 0.2em 0 0.1em 0;
         }
 
         /* 홈 버튼 스타일 */
@@ -26,27 +26,25 @@
             z-index: 9999;
         }
 
-        /* 중앙 정렬을 위해 별도 설정 */
+        /* 중앙 정렬 */
         .content {
             display: flex;
             justify-content: center;
-            align-items: center; /* 가운데 정렬 */
+            align-items: center;
             flex-direction: column;
-            height: 80vh; /* 화면의 80% 높이 사용 */
+            height: 80vh;
             margin-top: 20px;
         }
 
         /* 동그란 큰 버튼 스타일 */
         .play-button {
-            width: 40vw;   
-            height: 40vw;
-            max-width: 400px;
-            max-height: 400px;
+            width: 70vw;
+            aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
             background-color: #FFD700;
             color: black;
             border: none;
             border-radius: 50%;
-            font-size: 6em;
+            font-size: 10em;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -68,13 +66,12 @@
         /* 모바일 최적화 */
         @media (max-width: 600px) {
             h2 {
-                font-size: 70vw; /* 모바일에서는 더 크게 */
+                font-size: 70vw;
             }
 
             .play-button {
-                width: 50vw;
-                height: 50vw;
-                font-size: 8em;
+                width: 80vw; /* 더 크게 */
+                font-size: 11em;
             }
 
             .home-icon {
@@ -89,7 +86,7 @@
     <!-- 홈 버튼 -->
     <div class="home-icon" onclick="location.href='/capstone/cards.html'">&nbsp;&nbsp;이전</div>
     
-    <!-- 중앙 정렬을 위한 컨테이너 -->
+    <!-- 중앙 정렬 컨테이너 -->
     <div class="content">
         <h2>ㅣ</h2>
         <button class="play-button" onclick="playSound()">▶️</button>
