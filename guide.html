@@ -3,13 +3,51 @@
 <head>
     <title>학습 가이드</title>
     <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* 세로로 큰 버튼 배치 */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* 버튼 사이 간격 */
+            margin-top: 30px;
+        }
+
+        .card-button {
+            font-size: 2em;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 15px;
+            background-color: #FFD700;
+            color: black;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-button:hover {
+            background-color: #FFC300;
+        }
+
+        /* 홈 버튼 위치 고정 */
+        .home-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
     <!-- 홈 버튼 -->
     <div class="home-icon" onclick="location.href='index.html'">&nbsp;&nbsp;🏠</div>
     
     <h2>점자 학습 가이드</h2>
-    <p>점자는 시각장애인이 촉각으로 글자를 읽을 수 있도록 만든 문자 체계입니다.</p>
-</body>
 
+    <div class="button-container">
+        <button class="card-button" onclick="location.href='/capstone/cards/card1.html'">자음</button>
+        <button class="card-button" onclick="location.href='/capstone/cards/card2.html'">모음</button>
+    </div>
+</body>
 </html>
