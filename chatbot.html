@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>손끝학교 챗봇</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 4em;
+      margin-top: 60px;
+      color: #333;
+    }
+
+    .home-icon {
+      position: fixed;
+      top: 30px;
+      left: 20px;
+      font-size: 3em;
+      cursor: pointer;
+      z-index: 9999;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .play-button {
+      width: 80vw;
+      max-width: 600px;
+      height: 500px;
+      font-size: 5em;
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+      margin-bottom: 40px;
+    }
+
+    .play-button:hover {
+      background-color: #FFC300;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .play-button {
+        width: 90vw;
+        height: 500px;
+        font-size: 4em;
+      }
+
+      h2 {
+        font-size: 3em;
+      }
+    }
+
+    #question, #answer {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 홈 버튼 -->
+  <div class="home-icon" onclick="location.href='/capstone/index.html'">🏠</div>
+
+  <div class="content">
+    <h2>AI 챗봇</h2>
+
+    <button class="play-button" onclick="startListening()">질문하기</button>
+
+    <p id="question"></p>
+    <p id="answer"></p>
+  </div>
+
+  <!-- 비밀 API 키와 챗봇 로직 불러오기 -->
+  <script src="key.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
