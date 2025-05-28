@@ -3,43 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>손끝학교 챗봇</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css">
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h2 {
-      font-size: 4em;
-      margin-top: 60px;
-      color: #333;
-    }
-
-    .home-icon {
-      position: fixed;
-      top: 30px;
-      left: 20px;
-      font-size: 3em;
-      cursor: pointer;
-      z-index: 9999;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-    }
-
     .play-button {
       width: 80vw;
       max-width: 600px;
       height: 500px;
-      font-size: 5em;
+      font-size: 10em;
       background-color: #FFD700;
       color: black;
       border: none;
@@ -47,7 +18,6 @@
       cursor: pointer;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.2s ease;
-      margin-bottom: 40px;
     }
 
     .play-button:hover {
@@ -59,16 +29,12 @@
       .play-button {
         width: 90vw;
         height: 500px;
-        font-size: 4em;
-      }
-
-      h2 {
-        font-size: 3em;
+        font-size: 10em;
       }
     }
 
     #question, #answer {
-      font-size: 1.5em;
+      font-size: 2em;
       margin-top: 20px;
       color: #333;
     }
@@ -77,7 +43,7 @@
 
 <body>
   <!-- 홈 버튼 -->
-  <div class="home-icon" onclick="location.href='/capstone/index.html'">🏠</div>
+  <div class="home-icon" onclick="location.href='/capstone/index.html'">&nbsp;&nbsp;🏠</div>
 
   <div class="content">
     <h2>AI 챗봇</h2>
