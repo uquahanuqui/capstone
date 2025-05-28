@@ -9,6 +9,7 @@ function startListening() {
     const userSpeech = event.results[0][0].transcript;
     document.getElementById("question").innerText = "🙋 질문: " + userSpeech;
 
+    document.getElementById("answer").innerText = "🤖 답변을 생성 중입니다...";
     const gptAnswer = await askGPT(userSpeech);
     document.getElementById("answer").innerText = "🤖 답변: " + gptAnswer;
 
