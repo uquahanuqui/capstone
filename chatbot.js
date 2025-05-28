@@ -5,15 +5,33 @@ function startListening() {
   recognition.lang = "ko-KR";
   recognition.start();
 
+  // 🎤 듣는 중 표시
+  document.getElementById("question").innerText = "🎤 듣는 중이에요...";
+
   recognition.onresult = async function (event) {
     const userSpeech = event.results[0][0].transcript;
     document.getElementById("question").innerText = "🙋 질문: " + userSpeech;
 
+    // 🤖 GPT 응답 대기 메시지
     document.getElementById("answer").innerText = "🤖 답변을 생성 중입니다...";
+
     const gptAnswer = await askGPT(userSpeech);
     document.getElementById("answer").innerText = "🤖 답변: " + gptAnswer;
 
     speak(gptAnswer);
+  };
+
+  // 🎤 마이크 종료 시 처리
+  recognition.onend = function () {
+    // 만약 질문 결과가 없다면 '듣기 종료' 표시
+    if (!document.getElementById("question").innerText.includes("🙋 질문:")) {
+      document.getElementById("question").innerText = "🛑 마이크가 꺼졌어요.";
+    }
+  };
+
+  // 🎤 오류 발생 시 알림
+  recognition.onerror = function (event) {
+    document.getElementById("question").innerText = "⚠️ 오류 발생: " + event.error;
   };
 }
 
