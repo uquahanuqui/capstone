@@ -39,18 +39,30 @@
     <div class="home-icon" onclick="location.href='/capstone/index.html'">&nbsp;&nbsp;🏠</div>
     
     <div class="content">
-        <h2>학습 가이드</h2>
-        <!-- 버튼 2개 세로 정렬 -->
-        <div class="button-container">
-            <button class="play-button" onclick="playSound()">자음</button>
-            <button class="play-button" onclick="playSound()">모음</button>
-        </div>
+    <h2>학습 가이드</h2>
+    <div class="button-container">
+        <button class="play-button" onclick="playSound('jaeum')">자음</button>
+        <button class="play-button" onclick="playSound('moeum')">모음</button>
     </div>
+</div>
 
-    <script>
-        function playSound() {
-            alert("음성 파일이 아직 없습니다!");
+<script>
+    function playSound(type) {
+        let audioPath = "";
+
+        if (type === 'jaeum') {
+            audioPath = "../audio/letter1.mp3"; // 자음용 mp3 파일 경로
+        } else if (type === 'moeum') {
+            audioPath = "../audio/letter2.mp3"; // 모음용 mp3 파일 경로
         }
-    </script>
+
+        const audio = new Audio(audioPath);
+        audio.play().catch(err => {
+            console.error("오디오 재생 오류:", err);
+            alert("음성을 재생할 수 없습니다.");
+        });
+    }
+</script>
+
 </body>
 </html>
