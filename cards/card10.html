@@ -93,9 +93,10 @@
     </div>
 
     <script>
-        function playSound() {
-            alert("음성 파일이 아직 없습니다!");
-        }
+    function playSound() {
+        const audio = new Audio("../audio/letter10.mp3");
+        audio.play();
+    }
     </script>
 </body>
 </html>
