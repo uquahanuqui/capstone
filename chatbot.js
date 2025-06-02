@@ -18,12 +18,16 @@ function startListening() {
     const gptAnswer = await askGPT(userSpeech);
     document.getElementById("answer").innerText = "🤖 답변: " + gptAnswer;
 
-    speak(gptAnswer);
+    // ✅ 답변 듣기 버튼 보여주기
+    const playButton = document.getElementById("play-answer");
+    playButton.style.display = "inline-block";
+    playButton.onclick = function () {
+      speak(gptAnswer);
+    };
   };
 
   // 🎤 마이크 종료 시 처리
   recognition.onend = function () {
-    // 만약 질문 결과가 없다면 '듣기 종료' 표시
     if (!document.getElementById("question").innerText.includes("🙋 질문:")) {
       document.getElementById("question").innerText = "🛑 마이크가 꺼졌어요.";
     }
@@ -36,7 +40,7 @@ function startListening() {
 }
 
 async function askGPT(question) {
-  console.log("질문 전달:", question); // 🔍 로그 확인용
+  console.log("질문 전달:", question);
 
   const response = await fetch("https://gpt-proxy-fawn.vercel.app/api/chat", {
     method: "POST",
@@ -49,7 +53,7 @@ async function askGPT(question) {
   });
 
   const data = await response.json();
-  console.log("GPT 응답 데이터:", data); // 🔍 응답 확인용
+  console.log("GPT 응답 데이터:", data);
 
   return data.choices?.[0]?.message?.content || "죄송해요. 답변을 가져오지 못했어요.";
 }
