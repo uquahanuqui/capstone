@@ -1,5 +1,7 @@
 // 브라우저 음성 인식 → GPT 프록시 서버 호출 → TTS 응답
 
+let lastAnswer = "";  // 🔁 마지막 답변 저장용
+
 function startListening() {
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
   recognition.lang = "ko-KR";
@@ -16,6 +18,8 @@ function startListening() {
     document.getElementById("answer").innerText = "🤖 답변을 생성 중입니다...";
 
     const gptAnswer = await askGPT(userSpeech);
+    lastAnswer = gptAnswer;  // ✅ 응답 저장
+
     document.getElementById("answer").innerText = "🤖 답변: " + gptAnswer;
 
     // ✅ 답변 듣기 버튼 보여주기
@@ -62,4 +66,11 @@ function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "ko-KR";
   speechSynthesis.speak(utterance);
+}
+
+// 🔊 답변 듣기 전용 버튼에서 호출됨
+function speakLastAnswer() {
+  if (lastAnswer) {
+    speak(lastAnswer);
+  }
 }
