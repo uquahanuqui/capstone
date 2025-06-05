@@ -92,10 +92,11 @@
         <button class="play-button" onclick="playSound()">▶️</button>
     </div>
 
-    <script>
-        function playSound() {
-            alert("음성 파일이 아직 없습니다!");
-        }
+<script>
+    function playSound() {
+        const audio = new Audio("../audio/letter28.mp3");
+        audio.play();
+    }
     </script>
 </body>
 </html>
