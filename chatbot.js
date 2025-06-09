@@ -1,6 +1,7 @@
 // 브라우저 음성 인식 → GPT 프록시 서버 호출 → TTS 응답
 
-let lastAnswer = "";  // 🔁 마지막 답변 저장용
+let lastAnswer = "";       // 🔁 마지막 GPT 답변 저장
+let isSpeaking = false;    // 🔊 음성 재생 상태 확인용
 
 function startListening() {
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
@@ -18,26 +19,24 @@ function startListening() {
     document.getElementById("answer").innerText = "🤖 답변을 생성 중입니다...";
 
     const gptAnswer = await askGPT(userSpeech);
-    lastAnswer = gptAnswer;  // ✅ 응답 저장
+    lastAnswer = gptAnswer;
 
     document.getElementById("answer").innerText = "🤖 답변: " + gptAnswer;
 
-    // ✅ 답변 듣기 버튼 보여주기
+    // ✅ 답변 듣기 버튼 보여주기 및 클릭 이벤트 연결
     const playButton = document.getElementById("play-answer");
     playButton.style.display = "inline-block";
     playButton.onclick = function () {
-      speak(gptAnswer);
+      toggleSpeak(gptAnswer);
     };
   };
 
-  // 🎤 마이크 종료 시 처리
   recognition.onend = function () {
     if (!document.getElementById("question").innerText.includes("🙋 질문:")) {
       document.getElementById("question").innerText = "🛑 마이크가 꺼졌어요.";
     }
   };
 
-  // 🎤 오류 발생 시 알림
   recognition.onerror = function (event) {
     document.getElementById("question").innerText = "⚠️ 오류 발생: " + event.error;
   };
@@ -62,15 +61,24 @@ async function askGPT(question) {
   return data.choices?.[0]?.message?.content || "죄송해요. 답변을 가져오지 못했어요.";
 }
 
-function speak(text) {
+// 🔊 음성 재생 또는 중지
+function toggleSpeak(text) {
+  if (isSpeaking) {
+    speechSynthesis.cancel(); // 🔇 음성 멈춤
+    isSpeaking = false;
+    return;
+  }
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "ko-KR";
-  speechSynthesis.speak(utterance);
-}
 
-// 🔊 답변 듣기 전용 버튼에서 호출됨
-function speakLastAnswer() {
-  if (lastAnswer) {
-    speak(lastAnswer);
-  }
+  utterance.onstart = () => {
+    isSpeaking = true;
+  };
+
+  utterance.onend = () => {
+    isSpeaking = false;
+  };
+
+  speechSynthesis.speak(utterance);
 }
